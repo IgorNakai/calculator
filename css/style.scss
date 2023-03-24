@@ -1,0 +1,98 @@
+@import 'mixins';
+@import 'calculator';
+
+:root{
+    --primary-font-family: 'Montserrat', sans-serif;
+    --secundery-font-family: 'Koulen', cursive;
+
+    --text-color: rgb(240, 240, 240);
+    --text-color-hover: rgb(155, 155, 155);
+
+    --primary-color: rgb(91, 31, 202);
+    --primary-color-hover: rgba(91, 31, 202, 0.808);
+    --secundery-color: rgb(38, 38, 46);
+    --secundery-color-hover: rgb(29, 29, 39, 0.808);
+    --third-color: rgb(17, 99, 88);
+    --third-color-hover: rgba(17, 99, 88,  0.808);
+    --fourth-color: rgb(187, 36, 107);
+    --fourth-color-hover: rgb(187, 36, 107, 0.808);
+
+    --fifth-color: rgb(30, 28, 41);
+
+
+    --text-color-button: rgb(219, 219, 219);
+    --btn-color: rgb(34, 26, 26);
+    --btn-color-hover: rgba(39, 39, 39, 0.808);
+
+    transition: 0.2s;
+}
+.ligth:root{
+    --primary-font-family: 'Montserrat', sans-serif;
+    --secundery-font-family: 'Koulen', cursive;
+
+    --text-color: rgb(20, 20, 20);
+    --text-color-hover: rgb(20, 20, 20, 155);
+
+    --primary-color: rgb(142, 93, 235);
+    --primary-color-hover: rgba(142, 93, 235, 0.808);
+    --secundery-color: rgb(210, 223, 219);
+    --secundery-color-hover: rgb(29, 29, 39, 0.808);
+    --third-color: rgb(214, 124, 250);
+    --third-color-hover: rgba(214, 124, 250,  0.808);
+    --fourth-color: rgb(61, 212, 200);
+    --fourth-color-hover: rgb(61, 212, 200, 0.808);
+
+    --fifth-color: rgb(206, 206, 240);
+
+
+    --text-color-button: rgb(36, 36, 36);
+    --btn-color: rgb(64, 138, 199);
+    --btn-color-hover: rgba(64, 138, 199, 0.808);
+
+    transition: 0.2s;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: var(--secundery-font-family);
+    
+    button{
+        @include btn;
+    }
+    h1{
+        @include font-size(H1)
+    }
+    h2{
+        @include font-size(H2)
+    }
+    h3{
+        @include font-size(H3)
+    }
+    h4{
+        @include font-size(H4)
+    }
+    h5{
+        @include font-size(H5)
+    }
+    h6{
+        @include font-size(H6)
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        @include font-size(sizeOne);
+        color: var(--text-color);
+    }
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--fifth-color);
+    @include font-size(sizeOne);
+}

@@ -1,0 +1,102 @@
+@mixin break($point) {
+  @if $point == desktop FK{
+    @media screen and (min-width: rem(2560)) { 
+        @content; 
+      }
+  }
+  @if $point == desktop {
+    @media screen and (min-width: rem(1280)) { 
+        @content; 
+      }
+  }
+  @else if $point == laptop {
+    @media (min-width: rem(1024)) { 
+        @content; 
+      }
+  }
+   @else if $point == tablet {
+    @media (min-width: rem(768)) { 
+        @content; 
+      }
+  }
+  @else if $point == mobile_G {
+    @media (min-width: rem(425)) { 
+      @content; 
+      }
+  }
+   @else if $point == mobile_M {
+    @media (min-width: rem(375))  { 
+      @content; 
+      }
+  }
+  @else if $point == mobile_P {
+    @media (min-width: rem(320))  { 
+        @content; 
+      }
+  }
+}
+@function rem($value) {
+    $remValue: ($value / 16) + rem; 
+    @return $remValue;
+}
+@mixin font-size($point) {
+  @if $point == sizeOne{
+    font-size: rem(50);
+    font-weight: 500;
+  }@else if $point == H1{
+    font-size: rem(30);
+    font-weight: 800;
+  }@else if $point == H2{
+    font-size: rem(28);
+    font-weight: 700;
+  }@else if $point == H3{
+    font-size: rem(26);
+    font-weight: 700;
+  }
+  @else if $point == H4{
+    font-size: rem(23);
+    font-weight: 700;
+  }@else if $point == H5{
+    font-size: rem(20);
+    font-weight: 700;
+  }
+  @else if $point == H6{
+    font-size: rem(17);
+    font-weight: 700;
+  }
+}
+@mixin max-conteiner {
+  max-width: rem(1280);
+  margin: 0 auto;
+  height: 100%;
+}
+@mixin btn {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: rem(2);
+    background-color: var(--btn-color);
+    color: var(--text-color-button);
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s linear;
+    @include font-size(sizeOne);
+    &:hover{
+      background-color: var(--btn-color-hover);
+    }
+}
+@mixin btn-2{
+  cursor: pointer;
+  outline: none;
+  border: rem(1) solid;
+  border-radius: rem(16);
+  background-color: transparent;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: rem(13) rem(16);
+  transition: 0.5s linear;
+  &:hover{
+    border: rem(1) solid var(--btn-color);
+  }
+}
