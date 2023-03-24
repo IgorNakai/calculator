@@ -7,6 +7,7 @@ const operationButton = document.querySelectorAll('[data-button="operation"]')
 const root = document.querySelector('[data-js="root"]')
 const themeSwitch = document.querySelector('[data-js="themeButton"]')
 const iconTheme = document.querySelector('[data-js="iconTheme"]')
+
 function deleteCurrentOperand(current){
 
     current.innerHTML = current.innerHTML.slice(0, -1)
